@@ -58,6 +58,15 @@ func sum(number ...int) int {
 	}
 	return k
 }
+
+func swap(a, b *int) {
+	*a, *b = *b, *a
+
+}
+func swap2(a, b int) (int, int) {
+	return b, a
+
+}
 func main() {
 
 	fmt.Println(eval(3, 4, "+"))
@@ -79,6 +88,14 @@ func main() {
 	}, 3, 4))
 
 	fmt.Println(sum(1, 2, 3, 4, 5))
+
+	//变量交换
+	a, b := 3, 4
+	//指针交换
+	swap(&a, &b)
+	fmt.Println(a, b)
+	//返回交换
+	fmt.Println(swap2(3, 4))
 
 }
 
